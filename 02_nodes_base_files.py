@@ -1,5 +1,5 @@
 """
-Author: Eszter Bokanyi, e.bokanyi@uva.nl, 2025.05.26.
+Author: Eszter Bokanyi, e.bokanyi@liacs.leidenuniv.nl, 2025.11.14.
 
 This file creates node dataframes using GBAPERSOONTAB, GBAADRESOBJECTBUS, KINDOUDERTAB, and GBAOVERLIJDENTAB
 for each year of the person network edgelists.

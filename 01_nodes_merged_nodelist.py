@@ -1,5 +1,5 @@
 """
-Author: Eszter Bokanyi, e.bokanyi@uva.nl, 2025.05.26.
+Author: Eszter Bokanyi, e.bokanyi@liacs.leidenuniv.nl, 2025.11.14.
 
 This script creates the union of all RINPERSOON ids that occur in the GBA files between 
 start_year and end_year given as arguments to the script.

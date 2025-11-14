@@ -1,23 +1,23 @@
 """
-Author: Eszter Bokanyi, e.bokanyi@uva.nl, 2024.11.12.
+Author: Eszter Bokanyi, e.bokanyi@liacs.leidenuniv.nl, 2025.11.14.
 
-This code reads CBS raw files and creates and MLN data objrect for each layer for a given year.
+This code reads CBS raw files and creates an MLN data object per layer for a given year.
 
-Usage e.g. for year 2011 (bash commands)
-/c/mambaforge/envs/9629/python.exe 03_network_generator.py 2009 2023 2023 V3
-
+Usage (example for 2023):
+    /c/mambaforge/envs/9629/python.exe 03_network_generator.py 2009 2023 2023 <node_data_folder> <output_folder>
 
 Parameters:
     start_year
     end_year
     actual_year
-    version
+    node_data_folder
+    output_folder
 
-for year in `seq 2009 2023`;
-do 
-    echo "======   YEAR $year   ============================"; 
-    /c/mambaforge/envs/9629/python.exe 03_network_generator.py 2009 2023 $year V3; 
-done
+Bash loop:
+    for year in `seq 2009 2023`; do
+        echo "======   YEAR $year   ============================";
+        /c/mambaforge/envs/9629/python.exe 03_network_generator.py 2009 2023 $year <node_data_folder> <output_folder>;
+    done
 """
 
 import pandas as pd
@@ -34,7 +34,6 @@ end_year = int(sys.argv[2])
 year = int(sys.argv[3])
 node_data_folder = sys.argv[4]
 output_folder = sys.argv[5]
-version = sys.argv[6]
 
 print(f"Processing network for year {year}.")
 
@@ -101,7 +100,7 @@ node_conf = dict(
     colmap = node_colmap,
     sep = ",",
     geo_shp_folder = "",
-    output = f"{output_folder}\\{year}\\{version}\\nodes.csv.gz",
+    output = f"{output_folder}\\{year}\\nodes.csv.gz",
     add_geo = False
 )
 
@@ -143,7 +142,7 @@ edge_conf_base = dict(
     files = [],
     colmap = edge_colmap,
     sep = ";", #default separator
-    output = f"{output_folder}\\{year}\\{version}\\",
+    output = f"{output_folder}\\{year}\\",
     nrows=None #how many rows to read from files, can be used for testing
 )
 
@@ -154,7 +153,7 @@ layer_conf = dict(
     input_folder_prefix = "",
     raw_file = "layers.csv",
     file = "",
-    output = f"H:\\shared_data\\{year}\\{version}\\layers.csv",
+    output = f"{output_folder}\\{year}\\layers.csv",
     symmetrize = [],
     symmetrize_all = False,
     raw_sep=",",
@@ -181,10 +180,6 @@ p = os.path.join(f"{output_folder}",str(year))
 if not os.path.exists(p):
     os.mkdir(p)
     print(f"Directory {p} created.")
-# if there's no folder for the network version, create it
-if not os.path.exists(os.path.join(p,version)):
-    os.mkdir(os.path.join(p,version))
-    print(f"Directory {p}\\{version} created.")
 
 # helper variable to only write node dataframe once
 first = True
