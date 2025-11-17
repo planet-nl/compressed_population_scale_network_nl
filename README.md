@@ -48,7 +48,7 @@ Pipeline steps and main artifacts:
   - `pandas` (incl. SPSS support via `pyreadstat`)
   - `polars`
   - `scipy`
-  - `mlnlib` (provides `mlnlib.preparation.RawCSVtoMLN`)
+  - `mlnlib` (provides `RawCSVtoMLN` and them `MultiLayerNetwork` for reading the results)
 
 Install the typical open-source deps with pip (example):
 
@@ -58,10 +58,7 @@ pip install -r requirements.txt
 
 ## Data locations and configuration
 
-The code defaults to CBS RA share paths (e.g., `G:\\Bevolking\\...`, `H:\\shared_data\\...`). If your environment differs, use:
-
-- CLI arguments on the scripts (see Usage), and/or
-- `files_per_year.json` to override per-year filenames, separators, and encodings.
+Use`files_per_year.json` to override per-year filenames, separators, and encodings if the ones given in the scripts do not work.
 
 ### `files_per_year.json`
 
