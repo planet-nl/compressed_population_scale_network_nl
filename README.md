@@ -1,4 +1,4 @@
-# CBS netwerk to MLN format
+# CBS netwerk to `mlnlib` format
 
 Convert CBS person-network raw tables (RA environment) into compressed MLN adjacency matrices and node files to be loaded by `mlnlib`.
 
