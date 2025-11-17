@@ -192,4 +192,4 @@ Per run/year you should see:
 
 ## Citation / Contact
 
-Author and maintainer: Eszter Bokanyi, e.bokanyi@liacs.leidenuniv.nl, PLANET-NL project.
+Author and maintainer: Eszter Bokányi, e.bokanyi@liacs.leidenuniv.nl, PLANET-NL project.
