@@ -9,7 +9,7 @@ layer_id,layer,label,group,label_long,binary
 7,506,schoolmate-wo,school,schoolmate-wo: schoolmate-wo,128
 8,101,neighbor-next-door,neighbor,neighbor-next-door: neighbor-next-door,256
 9,102,neighbor-neighborhood,neighbor,neighbor-neighborhood: neighbor-neighborhood,512
-10,201,colleauge,colleauge,colleauge: colleauge,1024
+10,201,colleague,work,work: colleague,1024
 11,301,parent,close,parent: parent,2048
 12,302,co-parent,close,co-parent: co-parent,4096
 13,303,grandparent,close,grandparent: grandparent,8192
@@ -32,3 +32,4 @@ layer_id,layer,label,group,label_long,binary
 30,320,cousin-by-partnership,extended,cousin-by-partnership: cousin-by-partnership,1073741824
 31,321,niece/nephew-by-partnership,extended,niece/nephew-by-partnership: niece/nephew-by-partnership,2147483648
 32,322,aunt/uncle-by-partnership,extended,aunt/uncle-by-partnership: aunt/uncle-by-partnership,4294967296
+
