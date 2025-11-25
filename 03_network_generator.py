@@ -122,7 +122,8 @@ for ef in edge_files:
     if not os.path.exists(ef):
         edge_files_exist = False
         print(f"{ef} was not found!")
-if not edge_files_exist:
+# there were corrupt CSVs in 2023
+if not edge_files_exist or year==2023:
     edge_files = files_per_year["edge_files"][str(year)]
 
 print("Adding layers from the following edge files:")
@@ -223,3 +224,4 @@ for ef,adj_name in zip(edge_files,adjacency_names):
         r.save_node_df(r.node_conf["output"])
     first = False
     r.save_edge_npz(r.edge_conf["output"])
+
