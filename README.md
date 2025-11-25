@@ -167,10 +167,11 @@ Per run/year you should see:
   - The code base mixes Linux bash and Windows-style paths as used in the RA (e.g., `G:\\...`, `H:\\...`). If running outside RA, adjust arguments and/or `files_per_year.json`.
   - The helper script uses `python.exe`. Replace with `python` if your interpreter is POSIX-only.
 
-- Custom files used as sources (`files_per_year.json`). Two files had to be generated manually by SPSS export as they were not available in the RA shared drives, and they were too large to load as SPSS files. Note that csv availability may change in the RA environment over time.
+- Custom files used as sources (`files_per_year.json`). Three files had to be generated manually by SPSS export as they were not available / faulty in the RA shared drives, and they were too large to load as SPSS files. Note that csv availability may change in the RA environment over time.
   - Line 56: H:\\shared_data\\misc\\BURENNETWERK2009TABV1.csv
+  - Line 71: H:\\shared_data\\misc\\BURENNETWERK2023TABV1.csv
   - Line 72: H:\\shared_data\\misc\\COLLEGANETWERK2023TABV1.csv
-
+  
 
 ## Troubleshooting
 
