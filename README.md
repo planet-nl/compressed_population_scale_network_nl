@@ -23,7 +23,7 @@ Pipeline steps and main artifacts:
 
 2) Build yearly base node files (attributes + active flag)
    - Script: `02_nodes_base_files.py`
-   - Inputs: merged mapping (from step 1), GBAPERSOONTAB (year), GBAADRESOBJECTBUS (year-1), GBAOVERLIJDENTAB (latest), KINDOUDERTAB
+   - Inputs: merged mapping (from step 1), GBAPERSOONTAB (year), GBAADRESOBJECTBUS (latest), GBAOVERLIJDENTAB (latest), KINDOUDERTAB
    - Output: `{output_folder}/base_start_{start}_end_{end}_year_{YYYY}.csv.gz`
      - Columns: `label, id, active, gender, birth_year, migrant_generation, number_of_parents_from_abroad, missing_mother, missing_father`
 
