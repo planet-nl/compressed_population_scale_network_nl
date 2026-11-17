@@ -29,7 +29,7 @@ Input:
 
 Output:
 -------
-    * {output_folder}\\nodelists\\base_start_{start_year}_end_{end_year}_year_{year}.csv.gz
+    * {output_folder}/nodelists/base_start_{start_year}_end_{end_year}_year_{year}.csv.gz
         * label
         * active (if True, person is in the nodelist of the given year)
         * gender
@@ -123,7 +123,7 @@ print("========================================")
 print("Reading GBAPERSOONTAB...")
 gbapersoontab_cols = ["RINPERSOON", "GBAGENERATIE", "GBAGESLACHT", "GBAAANTALOUDERSBUITENLAND","GBAGEBOORTEJAAR"]
 if year not in persoontab_files.keys():
-    fn =  f'G:\Bevolking\GBAPERSOONTAB\{year}\GBAPERSOON{year}TABV1.sav' # terugzetten naar TABV1
+    fn =  f'G:\\Bevolking\\GBAPERSOONTAB\\{year}\\GBAPERSOON{year}TABV1.sav' # terugzetten naar TABV1
 else:
     fn  = persoontab_files[year]
 
@@ -150,7 +150,7 @@ print("\tDone.")
 # who was registered at an address at JJJJ-01-01
 print("\tReading GBAADRESBUS...")
 if year-1 not in objectbus_files:
-    fn = f'G:\Bevolking\GBAADRESOBJECTBUS\GBAADRESOBJECT{year-1}BUSV1.sav'
+    fn = f'G:\\Bevolking\\GBAADRESOBJECTBUS\\GBAADRESOBJECT{year-1}BUSV1.sav'
 else:
     fn = objectbus_files[year-1]
 
@@ -265,7 +265,7 @@ nodes = merged_nodes\
 # print("\t\t-+",sum(~nodes["active"]&nodes["birth_year"]))
 print("\tDone.")
 
-output = f'{output_folder}\\base_start_{start_year}_end_{end_year}_year_{year}.csv'
+output = os.path.join(output_folder, f"base_start_{start_year}_end_{end_year}_year_{year}.csv")
 print(f"Writing results to {output}...")
 with pl.Config(tbl_cols = -1):
     print(nodes.head())

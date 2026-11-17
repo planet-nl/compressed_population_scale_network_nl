@@ -50,7 +50,7 @@ node_set = list()
 for year in year_list:
     print("YEAR",year)
     # default CSV file name for GBAPERSOONTAB
-    node_file = f"G:\Bevolking\GBAPERSOONTAB\\{year}\geconverteerde data\GBAPERSOON{year}TABV1_csv.csv"
+    node_file = f"G:\\Bevolking\\GBAPERSOONTAB\\{year}\\geconverteerde data\\GBAPERSOON{year}TABV1_csv.csv"
     # if default name does not exist, read filepath from config file
     if not os.path.exists(node_file):
         node_file = files_per_year["node_files"][str(year)][0]

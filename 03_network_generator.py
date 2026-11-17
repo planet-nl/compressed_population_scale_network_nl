@@ -44,7 +44,7 @@ files_per_year = json.load(open("files_per_year.json"))
 
 # node file names to include if they exist
 node_files = [
-    f"{node_data_folder}\\base_start_{start_year}_end_{end_year}_year_{year}.csv.gz",
+    os.path.join(node_data_folder, f"base_start_{start_year}_end_{end_year}_year_{year}.csv.gz"),
     # f"{node_data_folder}\\location_{year}.csv.gz",
     # f"{node_data_folder}\\nodelists\\income_{year}.csv.gz"
 ]
@@ -100,7 +100,7 @@ node_conf = dict(
     colmap = node_colmap,
     sep = ",",
     geo_shp_folder = "",
-    output = f"{output_folder}\\{year}\\nodes.csv.gz",
+    output = os.path.join(output_folder, str(year), "nodes.csv.gz"),
     add_geo = False
 )
 
@@ -143,7 +143,7 @@ edge_conf_base = dict(
     files = [],
     colmap = edge_colmap,
     sep = ";", #default separator
-    output = f"{output_folder}\\{year}\\",
+    output = os.path.join(output_folder, str(year), ""),
     nrows=None #how many rows to read from files, can be used for testing
 )
 
@@ -154,7 +154,7 @@ layer_conf = dict(
     input_folder_prefix = "",
     raw_file = "layers.csv",
     file = "",
-    output = f"{output_folder}\\{year}\\layers.csv",
+    output = os.path.join(output_folder, str(year), "layers.csv"),
     symmetrize = [],
     symmetrize_all = False,
     raw_sep=",",
@@ -177,7 +177,7 @@ adjacency_names = [
 
 
 # if there's no folder for the year's network, create it
-p = os.path.join(f"{output_folder}",str(year))
+p = os.path.join(output_folder, str(year))
 if not os.path.exists(p):
     os.mkdir(p)
     print(f"Directory {p} created.")

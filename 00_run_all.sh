@@ -38,7 +38,7 @@ echo -e "===========================================\n Combining layerwise matri
 for year in `seq $start_year $end_year`
 do
     echo -e "============= YEAR $year =================="
-    echo "Combining in "$output_folder"\\"$year"..."
-    $python_path/python.exe 04_combine_layers.py $output_folder"\\"$year
+    echo "Combining in $output_folder/$year..."
+    $python_path/python.exe 04_combine_layers.py "$output_folder/$year"
 done
 echo -e "===========================================\n Done. \n===========================================\n"
